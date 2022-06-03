@@ -1,5 +1,8 @@
-<script>
-  export let DropdownItems;
+<script lang="ts">
+  // Interface
+  import type IDropDownItem from "../interface/IDropdownItem";
+  // Props
+  export let DropdownItems: IDropDownItem[];
 </script>
 
 <ul
