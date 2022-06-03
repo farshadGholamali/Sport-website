@@ -1,9 +1,12 @@
 <script lang="ts">
   // Components
   import Button from "../../@core/components/Button.svelte";
+  import DropdownMenu from "../../@core/components/DropdownMenu.svelte";
+  import DropdownItem from "../../@core/components/DropdownItem.svelte";
   // Interfaces
   import type IButton from "../../@core/interface/IButton";
-  // Props
+  import type IDropDownItem from "../../@core/interface/IDropdownItem";
+  // Button Props
   let BtnDeposit: IButton = {
     tagType: "a",
     hypertext: "/",
@@ -16,6 +19,27 @@
     classes:
       "btn min-h-min h-10 px-2.5 hover:border-transparent border-blue-400 bg-blue-100 hover:bg-blue-200",
   };
+  // DropDownMenu Props
+  let DropdownItems: IDropDownItem[] = [
+    {
+      title: "profile",
+      notification: "New",
+      hypertext: "/",
+      classes: "justify-between",
+    },
+    {
+      title: "Setting",
+      notification: "",
+      hypertext: "/",
+      classes: "justify-between",
+    },
+    {
+      title: "Logout",
+      notification: "",
+      hypertext: "/",
+      classes: "justify-between",
+    },
+  ];
 </script>
 
 <div class="navbar justify-between bg-base-100 ">
@@ -56,36 +80,19 @@
         />
       </svg>
     </Button>
-
-    <div class="dropdown dropdown-end">
-      <label for="" tabindex="0" class="btn btn-ghost btn-circle avatar">
-        <div class="w-10 rounded-full">
-          <img
-            src="https://api.lorem.space/image/face?hash=33791"
-            alt="Profile"
-          />
-        </div>
-      </label>
-
-      <ul
-        tabindex="0"
-        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        <li>
-          <a href="/" class="justify-between">
-            Profile
-            <span class="badge">New</span>
-          </a>
-        </li>
-        <li>
-          <a href="/">Settings</a>
-        </li>
-        <li>
-          <a href="/">Logout</a>
-        </li>
-      </ul>
-    </div>
-    
+    <DropdownMenu>
+      <div class="dropdown dropdown-end">
+        <label for="" tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img
+              src="https://api.lorem.space/image/face?hash=33791"
+              alt="Profile"
+            />
+          </div>
+        </label>
+        <DropdownItem {DropdownItems} />
+      </div>
+    </DropdownMenu>
   </div>
 </div>
 
