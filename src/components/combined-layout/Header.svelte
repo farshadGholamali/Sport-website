@@ -1,11 +1,49 @@
 <script lang="ts">
+  // Interfaces
+  import type ITabsItems from "../../@core/interface/ITabsItems";
+  import type IButton from "../../@core/interface/IButton";
+  import type IDropDownItem from "../../@core/interface/IDropdownItem";
+
   // Components
+  import Tabs from "../../@core/components/Tabs.svelte";
   import Button from "../../@core/components/Button.svelte";
   import DropdownMenu from "../../@core/components/DropdownMenu.svelte";
   import DropdownItem from "../../@core/components/DropdownItem.svelte";
-  // Interfaces
-  import type IButton from "../../@core/interface/IButton";
-  import type IDropDownItem from "../../@core/interface/IDropdownItem";
+
+  // Tabs Props
+  let TabsItems: ITabsItems[] = [
+    {
+      title: "Sport",
+      classes: "tab tab-bordered",
+      hypertext: "/",
+    },
+    {
+      title: "Live",
+      classes: "tab tab-bordered tab-active",
+      hypertext: "/",
+    },
+    {
+      title: "Casino",
+      classes: "tab tab-bordered",
+      hypertext: "/",
+    },
+    {
+      title: "E-sport",
+      classes: "tab tab-bordered",
+      hypertext: "/",
+    },
+    {
+      title: "Promos",
+      classes: "tab tab-bordered",
+      hypertext: "/",
+    },
+    {
+      title: "Support",
+      classes: "tab tab-bordered",
+      hypertext: "/",
+    },
+  ];
+
   // Button Props
   let BtnDeposit: IButton = {
     tagType: "a",
@@ -19,6 +57,7 @@
     classes:
       "btn min-h-min h-10 px-2.5 hover:border-transparent border-blue-400 bg-blue-100 hover:bg-blue-200",
   };
+
   // DropDownMenu Props
   let DropdownItems: IDropDownItem[] = [
     {
@@ -43,21 +82,17 @@
 </script>
 
 <div class="navbar justify-between bg-base-100 ">
+  <!-- navbar start -->
   <div class="flex-1 navbar-start">
     <a href="/" class="btn btn-ghost min-h-min h-10 normal-case text-xl"
       >Football
     </a>
   </div>
 
-  <div class="tabs navbar-center">
-    <a href="/" class="tab tab-bordered">Sport</a>
-    <a href="/" class="tab tab-bordered tab-active">Live</a>
-    <a href="/" class="tab tab-bordered">Casino</a>
-    <a href="/" class="tab tab-bordered">E-sport</a>
-    <a href="/" class="tab tab-bordered">Promos</a>
-    <a href="/" class="tab tab-bordered">Support</a>
-  </div>
+  <!-- navbar center -->
+  <Tabs {TabsItems} />
 
+  <!-- navbar end  -->
   <div class="flex navbar-end gap-4">
     <Button
       hypertext={BtnDeposit.hypertext}
@@ -96,5 +131,3 @@
   </div>
 </div>
 
-<style>
-</style>
