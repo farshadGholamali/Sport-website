@@ -6,7 +6,9 @@
 </script>
 
 {#if tagType === "button"}
-  <button class={classes}>{text}</button>
+  <button class={classes}>{text}
+  <slot></slot>
+</button>
 {:else}
   <a href={hypertext} class={classes}>{text}</a>
 {/if}
