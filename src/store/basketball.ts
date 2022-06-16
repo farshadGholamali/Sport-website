@@ -62,7 +62,7 @@ export const Basketball_getCountries = readable(async (id?: number, name?: strin
 // The league id are unique in the API and leagues keep it across all seasons
 export const Basketball_getAllLeagues = readable(async (id?: number, name?: string, country?: string, code?: string, season?: number, team?: number, current?: string, search?: string, last?: number) => {
     try {
-        const response = await axios.get("https://v1.basketball.api-sports.io/countries", {
+        const response = await axios.get("https://v1.basketball.api-sports.io/leagues", {
             params: {
                 ...(id && { id: id }),
                 ...(name && { name: name }),

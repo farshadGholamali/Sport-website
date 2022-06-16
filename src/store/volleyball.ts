@@ -1,6 +1,6 @@
 import { readable } from "svelte/store";
 import axios from "axios";
-// VOLLEYBALL Volleyball 
+// VOLLEYBALL 
 // https://api-sports.io/documentation/volleyball/v1
 
 // Timezone
@@ -59,7 +59,7 @@ export const Volleyball_getCountries = readable(async (id?: number, name?: strin
 // Leagues
 // Get the list of available leagues and cups.
 // The league id are unique in the API and leagues keep it across all seasons
-export const Volleyball_getLeague = readable(async (id?: number, name?: string, country_id?: number, country?: string, type?: string, season?: number, search?: string) => {
+export const Volleyball_getAllLeagues = readable(async (id?: number, name?: string, country_id?: number, country?: string, type?: string, season?: number, search?: string) => {
     try {
         const response = await axios.get("https://v1.volleyball.api-sports.io/leagues", {
             params: {

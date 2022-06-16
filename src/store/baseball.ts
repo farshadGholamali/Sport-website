@@ -59,7 +59,7 @@ export const Baseball_getCountries = readable(async (id?: number, name?: string,
 // Leagues
 // Get the list of available leagues and cups.
 // The league id are unique in the API and leagues keep it across all seasons
-export const Baseball_getLeague = readable(async (id?: number, name?: string, country_id?: number, country?: string, type?: string, season?: number, search?: string) => {
+export const Baseball_getAllLeagues = readable(async (id?: number, name?: string, country_id?: number, country?: string, type?: string, season?: number, search?: string) => {
     try {
         const response = await axios.get("https://v1.baseball.api-sports.io/leagues", {
             params: {
