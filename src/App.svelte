@@ -1,11 +1,15 @@
 <script lang="ts">
   import Header from "./components/combined-layout/Header.svelte";
   import QuickView from "./components/combined-layout/QuickView.svelte";
+  import Main from "./components/combined-layout/Main.svelte";
 </script>
 
 <main>
   <Header />
-  <QuickView />
+  <div class="flex">
+    <QuickView />
+    <Main />
+  </div>
 </main>
 
 <style lang="scss">
