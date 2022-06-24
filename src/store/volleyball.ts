@@ -130,13 +130,13 @@ export const Volleyball_getTeamsStatistics = readable(async (league: number, sea
 // Get the standings for a league.
 // Return a table of one or more rankings according to the league / cup. Some competitions have several rankings in a year, regular season, pre season etc…
 // To know the list of available stages or groups you have to use the endpoint standings/stages or standings/groups
-export const Volleyball_getStandings = readable(async (league: number, season: number, team: number, stage?: string, group?: string) => {
+export const Volleyball_getStandings = readable(async (league: number, season: number, team?: number, stage?: string, group?: string) => {
     try {
         const response = await axios.get("https://v1.volleyball.api-sports.io/standings", {
             params: {
                 league,
                 season,
-                team,
+                ...(team && { team: team }),
                 ...(stage && { stage: stage }),
                 ...(group && { group: group }),
             },
@@ -191,7 +191,7 @@ export const Volleyball_getStandingsgroups = readable(async (league: number, sea
 // Games
 // For all requests to games you can add the query parameter timezone to your request in order to retrieve the list of games in the time zone of your choice like “Europe/London“
 // To know the list of available time zones you have to use the endpoint timezone
-export const Volleyball_getGames = readable(async (id?:number,date?:string,league?: number, season?: number,team?:number,timezone?:string) => {
+export const Volleyball_getGames = readable(async (id?: number, date?: string, league?: number, season?: number, team?: number, timezone?: string) => {
     try {
         const response = await axios.get("https://v1.volleyball.api-sports.io/games", {
             params: {
@@ -214,7 +214,7 @@ export const Volleyball_getGames = readable(async (id?:number,date?:string,leagu
 
 // games/h2h
 // Get heads to heads between two teams.
-export const Volleyball_getGamesh2h = readable(async (h2h:number,date?:string,league?: number, season?: number,timezone?:string) => {
+export const Volleyball_getGamesh2h = readable(async (h2h: number, date?: string, league?: number, season?: number, timezone?: string) => {
     try {
         const response = await axios.get("https://v1.volleyball.api-sports.io/games/h2h", {
             params: {
