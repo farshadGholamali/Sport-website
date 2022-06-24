@@ -130,7 +130,7 @@ export const Baseball_getTeamsStatistics = readable(async (league: number, seaso
 // Get the standings for a league.
 // Return a table of one or more rankings according to the league / cup. Some competitions have several rankings in a year, regular season, pre season etc…
 // To know the list of available stages or groups you have to use the endpoint standings/stages or standings/groups
-export const Baseball_getStandings = readable(async (league: number, season: number, team: number, stage?: string, group?: string) => {
+export const Baseball_getStandings = readable(async (league: number, season: number, team?: number, stage?: string, group?: string) => {
     try {
         const response = await axios.get("https://v1.baseball.api-sports.io/standings", {
             params: {
