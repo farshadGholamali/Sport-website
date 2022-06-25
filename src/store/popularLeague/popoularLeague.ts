@@ -95,3 +95,122 @@ export let basketballLeague = [
         id: "205",
     },
 ];
+
+export let vollyballLeague = [
+    {
+        name: "Copa Master",
+        id: "1"
+    },
+    {
+        name: "AVL",
+        id: "6"
+    }
+    ,
+    {
+        name: "Bundesliga",
+        id: "10"
+    }
+    ,
+    {
+        name: "Super Cup",
+        id: "17"
+    }
+    ,
+    {
+        name: "SuperLiga",
+        id: "25"
+    }
+    ,
+    {
+        name: "Super Cup",
+        id: "17"
+    }
+    ,
+    {
+        name: "Super League",
+        id: "86"
+    }
+]
+export let handballLeague = [
+    {
+        name: "Supercup",
+        id: "5"
+    },
+    {
+        name: "Premijer Liga",
+        id: "8"
+    },
+    {
+        name: "Extraliga",
+        id: "12"
+    },
+    {
+        name: "Division",
+        id: "15"
+    },
+    {
+        name: "Proligue",
+        id: "36"
+    },
+    {
+        name: "",
+        id: ""
+    },
+]
+export let baseballLeague = [
+    {
+        name: "MLB",
+        id: "1"
+    },
+    {
+        name: "NPB",
+        id: "2"
+    },
+    {
+        name: "KBO",
+        id: "5"
+    },
+    {
+        name: "ABL",
+        id: "6"
+    },
+    {
+        name: "LCBP",
+        id: "8"
+    },
+]
+export let rugbyLeague = [
+    { name: "Shute Shield", id: "2" },
+    { name: "Premiership", id: "5" },
+    { name: "CRC", id: "6" },
+    { name: "Liga", id: "9" },
+    { name: "Premiership Rugby Cup", id: "10" },
+    { name: "Supersevens", id: "18" },
+    { name: "Ereklasse", id: "28" },
+]
+export let hockeyLeague = [
+    {
+        name: "Belarusian Cup",
+        id: "2"
+    },
+    {
+        name: "U Sports",
+        id: "9"
+    },
+    {
+        name: "Metal Ligaen",
+        id: "12"
+    },
+    {
+        name: "Hokiliiga",
+        id: "13"
+    },
+    {
+        name: "Ligue Magnus",
+        id: "16"
+    },
+    {
+        name: "DEL",
+        id: "19"
+    },
+]
